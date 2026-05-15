@@ -46,31 +46,26 @@ Page sections (in order, see [index.html](index.html)): hero → programs → ac
 
 ## Run Methods
 
-The page is fully static — open it directly or serve it locally.
+The page is fully static. Serve it with [`http-server`](https://www.npmjs.com/package/http-server) (Node.js).
 
-**Option 1 — Open directly**
-
-```bash
-xdg-open index.html        # Linux
-open index.html            # macOS
-start index.html           # Windows
-```
-
-**Option 2 — Python static server**
+**Install (once, globally)**
 
 ```bash
-python3 -m http.server 8000
-# visit http://localhost:8000
+npm install -g http-server
 ```
 
-**Option 3 — Node static server**
+**Run from the project root**
 
 ```bash
-npx serve .
-# or
-npx http-server -p 8000
+http-server -p 8000 -o
 ```
 
-**Option 4 — VS Code**
+Then visit `http://localhost:8000`. The `-o` flag opens the browser automatically.
 
-Install the *Live Server* extension, right-click `index.html` → **Open with Live Server**.
+**Without installing globally**
+
+```bash
+npx http-server -p 8000 -o
+```
+
+Useful flags: `-c-1` disables caching during development, `-p <port>` sets the port.
