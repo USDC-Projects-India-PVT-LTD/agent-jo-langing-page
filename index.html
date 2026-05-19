@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="./assets/brand/favicon.ico" />
   <title>JAIN Online Programs - Build a Future-Ready Career</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -101,13 +102,23 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
+
+    /* Tools marquee */
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .tools-marquee-track {
+      animation: marquee linear infinite;
+    }
   </style>
 </head>
 
 <body class="flex flex-col min-h-screen selection:bg-primary selection:text-white">
   <!-- ================= HEADER ================= -->
   <header class="w-full sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
-    <div class="container mx-auto px-6 md:px-8 lg:px-12 flex justify-between items-center">
+    <div class="container mx-auto px-2 md:px-6 md:px-8 lg:px-12 flex justify-between items-center">
       <a href="/" class="flex items-center space-x-3 font-bold font-heading text-primary">
         <img src="./assets/brand/logo.png" alt="JAIN Online Logo" class="h-16 md:h-24" />
       </a>
@@ -123,7 +134,7 @@
 
       <nav class="flex items-center">
         <a href="#applyNow"
-          class="bg-primary text-white px-6 py-3 md:py-4 rounded-full font-bold text-sm uppercase tracking-wider hover:bg-primary/95 transition-all shadow-md active:scale-95">
+          class="bg-primary text-white px-6 py-3 rounded-full font-bold text-sm uppercase tracking-wider hover:bg-primary/95 transition-all shadow-md active:scale-95">
           Apply Now
         </a>
       </nav>
@@ -167,11 +178,11 @@
           </p>
           <div class="flex flex-row flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-6">
             <a href="#applyNow"
-              class="px-5 md:px-8 py-3 md:py-4 bg-primary text-white rounded-full font-bold text-sm md:text-base hover:bg-primary/95 transition-all hover:-translate-y-1 active:scale-95 shadow-lg whitespace-nowrap">
+              class="px-8 py-3 bg-primary text-white rounded-full font-bold text-base hover:bg-primary/95 transition-all hover:-translate-y-1 active:scale-95 shadow-lg whitespace-nowrap">
               Apply Now
             </a>
-            <a href="#admission-process"
-              class="px-5 md:px-8 py-3 md:py-4 border-2 border-primary text-primary bg-white rounded-full font-bold text-sm md:text-base hover:bg-primary/5 transition-all hover:-translate-y-1 active:scale-95 whitespace-nowrap">
+            <a href="#programs"
+              class="px-8 py-3 border-2 border-primary text-primary bg-white rounded-full font-bold text-base hover:bg-primary/5 transition-all hover:-translate-y-1 active:scale-95 whitespace-nowrap">
               Explore Programs
             </a>
             <div
@@ -234,7 +245,8 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- MBA -->
         <div
-          class="bg-white rounded-2xl shadow-[0_2px_15px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 reveal-element overflow-hidden flex flex-col group border border-gray-200 hover:border-primary/5 max-w-[360px] mx-auto lg:max-w-none w-full">
+          class="relative bg-white rounded-2xl shadow-[0_2px_15px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 reveal-element overflow-hidden flex flex-col group border border-gray-200 hover:border-primary/5 max-w-[360px] mx-auto lg:max-w-none w-full"
+          data-electives="mba">
           <div class="w-full relative h-48 overflow-hidden flex items-center justify-center">
             <img src="./assets/programs/mba_plain.png" alt="MBA Program"
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
@@ -257,7 +269,7 @@
               </span>
             </div>
             <a href="#applyNow"
-              class="inline-flex items-center justify-center gap-2 bg-primary text-white font-bold font-heading rounded-xl px-6 py-4 hover:bg-primary/95 transition-all shadow-md w-full active:scale-[0.98]">
+              class="inline-flex items-center justify-center gap-2 bg-primary text-white font-bold font-heading rounded-xl px-6 py-3 hover:bg-primary/95 transition-all shadow-md w-full active:scale-[0.98]">
               Know More &rarr;
             </a>
           </div>
@@ -265,7 +277,8 @@
 
         <!-- MCA -->
         <div
-          class="bg-white rounded-2xl shadow-[0_2px_15px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 reveal-element overflow-hidden flex flex-col group border border-gray-200 hover:border-primary/5 max-w-[360px] mx-auto lg:max-w-none w-full">
+          class="relative bg-white rounded-2xl shadow-[0_2px_15px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 reveal-element overflow-hidden flex flex-col group border border-gray-200 hover:border-primary/5 max-w-[360px] mx-auto lg:max-w-none w-full"
+          data-electives="mca">
           <div class="w-full relative h-48 overflow-hidden flex items-center justify-center">
             <img src="./assets/programs/mca_plain.png" alt="MCA Program"
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
@@ -288,7 +301,7 @@
               </span>
             </div>
             <a href="#applyNow"
-              class="inline-flex items-center justify-center gap-2 bg-primary text-white font-bold font-heading rounded-xl px-6 py-4 hover:bg-primary/95 transition-all shadow-md w-full active:scale-[0.98]">
+              class="inline-flex items-center justify-center gap-2 bg-primary text-white font-bold font-heading rounded-xl px-6 py-3 hover:bg-primary/95 transition-all shadow-md w-full active:scale-[0.98]">
               Know More &rarr;
             </a>
           </div>
@@ -296,7 +309,8 @@
 
         <!-- M.Com -->
         <div
-          class="bg-white rounded-2xl shadow-[0_2px_15px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 reveal-element overflow-hidden flex flex-col group border border-gray-200 hover:border-primary/5 max-w-[360px] mx-auto lg:max-w-none w-full">
+          class="relative bg-white rounded-2xl shadow-[0_2px_15px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 reveal-element overflow-hidden flex flex-col group border border-gray-200 hover:border-primary/5 max-w-[360px] mx-auto lg:max-w-none w-full"
+          data-electives="mcom">
           <div class="w-full relative h-48 overflow-hidden flex items-center justify-center">
             <img src="./assets/programs/mcom_plain.png" alt="M.Com Program"
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
@@ -319,7 +333,7 @@
               </span>
             </div>
             <a href="#applyNow"
-              class="inline-flex items-center justify-center gap-2 bg-primary text-white font-bold font-heading rounded-xl px-6 py-4 hover:bg-primary/95 transition-all shadow-md w-full active:scale-[0.98]">
+              class="inline-flex items-center justify-center gap-2 bg-primary text-white font-bold font-heading rounded-xl px-6 py-3 hover:bg-primary/95 transition-all shadow-md w-full active:scale-[0.98]">
               Know More &rarr;
             </a>
           </div>
@@ -327,6 +341,192 @@
       </div>
     </div>
   </section>
+
+
+  <!-- ================= TOOLS YOU'LL MASTER ================= -->
+  <section class="py-12 md:py-24 bg-black" id="tools">
+    <div class="container mx-auto px-6 md:px-8 lg:px-12">
+      <div class="overflow-hidden bg-white rounded-xl md:rounded-3xl px-4 py-10 sm:px-6 sm:py-12 md:px-12 md:py-16">
+        <div class="w-full">
+          <p class="text-center font-sans text-sm font-semibold uppercase tracking-wider md:text-base text-black">
+            Tools you'll master
+          </p>
+
+          <h2 class="mt-5 text-center font-heading text-3xl font-bold leading-tight text-black md:text-4xl lg:text-5xl">
+            30+
+            <span class="font-heading relative inline-block italic ">AI tools</span>
+          </h2>
+
+          <p class="mt-4 text-center font-sans text-base text-black md:text-lg">
+            Zero theory-only modules.
+          </p>
+
+          <!-- Marquee with edge fades -->
+          <div class="relative -mx-4 mt-10 sm:-mx-6 md:-mx-12 md:mt-12">
+            <div class="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-white from-[15%] to-transparent sm:w-14 md:w-20" aria-hidden="true"></div>
+            <div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-white from-[15%] to-transparent sm:w-14 md:w-20" aria-hidden="true"></div>
+
+            <!-- Mobile: 4 marquee rows -->
+            <div class="flex flex-col gap-4 md:hidden" id="toolsMarqueeMobile"></div>
+
+            <!-- Desktop: 2 marquee rows -->
+            <div class="hidden flex-col gap-6 md:flex" id="toolsMarqueeDesktop"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      var TOOL_IMAGES = [];
+      for (var i = 1; i <= 55; i++) {
+        TOOL_IMAGES.push('./assets/tools/tool' + i + '.png');
+      }
+
+      function splitIntoRows(items, rowCount) {
+        var base = Math.floor(items.length / rowCount);
+        var remainder = items.length % rowCount;
+        var rows = [];
+        var start = 0;
+        for (var i = 0; i < rowCount; i++) {
+          var size = base + (i < remainder ? 1 : 0);
+          rows.push(items.slice(start, start + size));
+          start += size;
+        }
+        return rows;
+      }
+
+      function buildRow(items, reverse, durationSec) {
+        var rowWrapper = document.createElement('div');
+        rowWrapper.className = 'relative w-full overflow-hidden';
+
+        var track = document.createElement('div');
+        track.className = 'tools-marquee-track flex w-max items-center gap-3 py-1 sm:gap-4';
+        track.style.animationDuration = durationSec + 's';
+        track.style.animationDirection = reverse ? 'reverse' : 'normal';
+
+        // Duplicate items so the marquee loop is seamless
+        var doubled = items.concat(items);
+        doubled.forEach(function (src) {
+          var chip = document.createElement('div');
+          chip.className = 'flex shrink-0 items-center justify-center rounded-full border border-neutral-200 bg-white px-3 py-2 shadow-sm sm:px-4 sm:py-2.5';
+
+          var img = document.createElement('img');
+          img.src = src;
+          img.alt = '';
+          img.loading = 'lazy';
+          img.className = 'h-7 w-auto max-w-[100px] object-contain sm:h-8 sm:max-w-[120px]';
+
+          chip.appendChild(img);
+          track.appendChild(chip);
+        });
+
+        rowWrapper.appendChild(track);
+        return rowWrapper;
+      }
+
+      var mobileEl = document.getElementById('toolsMarqueeMobile');
+      var desktopEl = document.getElementById('toolsMarqueeDesktop');
+
+      if (mobileEl) {
+        splitIntoRows(TOOL_IMAGES, 4).forEach(function (row, idx) {
+          mobileEl.appendChild(buildRow(row, idx % 2 === 1, 36 + idx * 2));
+        });
+      }
+
+      if (desktopEl) {
+        splitIntoRows(TOOL_IMAGES, 2).forEach(function (row, idx) {
+          desktopEl.appendChild(buildRow(row, idx % 2 === 1, 40 + idx * 4));
+        });
+      }
+    })();
+  </script>
+
+
+  <script>
+    (function () {
+      var ELECTIVES = {
+        mba: {
+          label: "MBA Specializations",
+          items: [
+            "Human Resource Management",
+            "Finance",
+            "Marketing",
+            "General Management",
+            "Finance and Marketing",
+            "Human Resource Management and Finance",
+            "Marketing and Human Resource Management",
+            "Marketing and Business Analytics",
+            "Finance and Business Analytics",
+            "Human Resource and Business Analytics",
+            "AI for Marketing",
+            "Data Science and Artificial Intelligence",
+            "AI for International Finance",
+            "AI for Finance",
+            "Supply Chain Production and Operations Management",
+            "Business Intelligence & Analytics",
+            "Digital Marketing and e-Commerce",
+            "AI for Human Resources",
+            "International Finance (Accredited by ACCA, UK)"
+          ]
+        },
+        mca: {
+          label: "MCA Specializations",
+          items: [
+            "Computer Science and Information Technology",
+            "Artificial Intelligence and Machine Learning",
+            "Cyber Security and Artificial Intelligence",
+            "FinTech and Artificial Intelligence",
+            "Data Science and Artificial Intelligence",
+            "Generative and Agentic AI",
+            "Cloud and DevOps",
+            "Full Stack Development"
+          ]
+        },
+        mcom: {
+          label: "M.Com Specializations",
+          items: [
+            "AI for International Finance",
+            "Accounting and Finance",
+            "International Finance (Accredited by ACCA, UK)"
+          ]
+        }
+      };
+
+      document.querySelectorAll("[data-electives]").forEach(function (card) {
+        var key = card.getAttribute("data-electives");
+        var data = ELECTIVES[key];
+        if (!data) return;
+
+        var listHtml = data.items
+          .map(function (item) {
+            return (
+              '<li class="flex items-start gap-2">' +
+              '<span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-secondary"></span>' +
+              item +
+              "</li>"
+            );
+          })
+          .join("");
+
+        var overlay = document.createElement("div");
+        overlay.className =
+          "program-electives pointer-events-none absolute inset-0 z-10 flex flex-col bg-primary text-white opacity-0 transition-opacity duration-300 group-hover:pointer-events-auto group-hover:opacity-100";
+        overlay.innerHTML =
+          '<div class="flex items-center justify-between border-b border-white/10 px-6 py-4">' +
+            '<p class="font-heading text-base font-bold">' + data.label + '</p>' +
+            '<span class="rounded-full bg-secondary px-2.5 py-0.5 text-xs font-bold text-primary">' + data.items.length + '</span>' +
+          '</div>' +
+          '<ul class="hide-scrollbar flex-1 overflow-y-auto px-6 py-4 space-y-2 text-sm leading-snug">' + listHtml + '</ul>' +
+          '<div class="border-t border-white/10 px-6 py-4">' +
+            '<a href="#applyNow" class="inline-flex w-full items-center justify-center gap-2 bg-secondary text-primary font-bold font-heading rounded-xl px-6 py-3 hover:bg-secondary/90 transition-all shadow-md active:scale-[0.98]">Know More &rarr;</a>' +
+          '</div>';
+
+        card.appendChild(overlay);
+      });
+    })();
+  </script>
 
 
   <!-- ================= OUR ACADEMIC APPROACH ================= -->
@@ -871,7 +1071,7 @@
               </svg> <span><strong>Career-Focused Skills:</strong> Build capabilities valued by employers</span></li>
           </ul>
           <a href="#applyNow"
-            class="inline-flex items-center gap-2 bg-white text-[#0a66c2] font-bold rounded-full px-8 py-4 hover:bg-white/90 transition-all shadow-lg active:scale-[0.98]">
+            class="inline-flex items-center gap-2 bg-white text-[#0a66c2] font-bold rounded-full px-8 py-3 hover:bg-white/90 transition-all shadow-lg active:scale-[0.98]">
             Unlock Exclusive Access
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
               stroke-linecap="round" stroke-linejoin="round">
@@ -1039,215 +1239,161 @@
     </div>
   </section>
   <!-- ================= ALUMNI SPEAK ================= -->
-  <section class="py-12 md:py-24 bg-gradient-to-br from-[#0F1B45] to-[#1B2C6B]" id="alumni">
+  <section class="py-12 md:py-24 bg-gradient-to-br from-[#0F1B45] to-[#1B2C6B] relative overflow-hidden" id="alumni">
     <div class="container mx-auto px-6 md:px-8 lg:px-12">
-      <div class="text-center mb-16 reveal-element">
-        <h2 class="font-heading text-[32px] md:text-[40px] font-bold text-white mb-4">Alumni Speak</h2>
-        <p class="text-white/60 max-w-2xl mx-auto text-lg">Hear what our learners say about their Jain Online
-          journey</p>
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal-element">
+        <p class="text-white tracking-[0.2em] text-xs md:text-sm font-bold uppercase mb-4">
+          100+ Success Stories
+        </p>
+        <h2 class="font-heading text-[32px] md:text-[40px] font-bold text-white leading-tight mb-4">
+          Alumni
+          <span class="relative inline-block">
+            Speak
+          </span>
+        </h2>
+        <p class="text-white/70 max-w-2xl mx-auto text-lg">Here's what our stalwarts have to say about their JAIN Online journey.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Testimonial 1 -->
-        <div
-          class="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-md hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 flex flex-col max-w-[360px] mx-auto lg:max-w-none w-full">
-          <div class="mb-4">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-              class="text-secondary">
-              <path d="M10 11L8.5 16H5L6.5 11H5V7H10V11ZM19 11L17.5 16H14L15.5 11H14V7H19V11Z" fill="currentColor">
-              </path>
-            </svg>
-          </div>
-          <div class="flex gap-1 mb-4">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-secondary">
-              <path
-                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
-              </path>
-            </svg>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-secondary">
-              <path
-                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
-              </path>
-            </svg>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-secondary">
-              <path
-                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
-              </path>
-            </svg>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-secondary">
-              <path
-                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
-              </path>
-            </svg>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-secondary">
-              <path
-                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
-              </path>
-            </svg>
-          </div>
-          <p class="text-white/90 text-sm italic leading-relaxed mb-6 flex-1">"The live sessions and mentorship
-            completely changed how I approach business problems. Best investment I've made in my career."</p>
-          <div class="flex items-center gap-3 mt-auto">
-            <img src="./assets/testimonials/anirudh.webp" alt="Anirudh Chand"
-              class="w-11 h-11 rounded-full object-cover flex-shrink-0 border-2 border-secondary/20">
-            <div>
-              <div class="text-white font-bold text-sm">Anirudh Chand</div>
-              <div class="text-white/70 text-xs">MBA – HR & Finance</div>
-            </div>
-          </div>
+      <!-- Slider: horizontal scroll with hidden scrollbar + arrow controls -->
+      <div class="group relative -mx-6 md:-mx-8 lg:-mx-12">
+        <div id="alumniSlider" class="hide-scrollbar flex select-none gap-6 overflow-x-auto pb-4 px-6 md:px-8 lg:px-12"
+          role="region" aria-label="Alumni testimonials" style="touch-action: pan-x; scroll-behavior: smooth;">
+          <!-- Alumni cards (data-driven via JS below) -->
+          <div id="alumniCardsTrack" class="contents"></div>
         </div>
 
-        <!-- Testimonial 2 -->
-        <div
-          class="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-md hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 flex flex-col max-w-[360px] mx-auto lg:max-w-none w-full">
-          <div class="mb-4">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-              class="text-secondary">
-              <path d="M10 11L8.5 16H5L6.5 11H5V7H10V11ZM19 11L17.5 16H14L15.5 11H14V7H19V11Z" fill="currentColor">
-              </path>
-            </svg>
-          </div>
-          <div class="flex gap-1 mb-4">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-secondary">
-              <path
-                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
-              </path>
-            </svg>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-secondary">
-              <path
-                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
-              </path>
-            </svg>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-secondary">
-              <path
-                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
-              </path>
-            </svg>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-secondary">
-              <path
-                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
-              </path>
-            </svg>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-secondary">
-              <path
-                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
-              </path>
-            </svg>
-          </div>
-          <p class="text-white/90 text-sm italic leading-relaxed mb-6 flex-1">"Flexible schedule helped me study
-            while working full-time. The faculty were incredibly supportive throughout."</p>
-          <div class="flex items-center gap-3 mt-auto">
-            <img src="./assets/testimonials/debasmita.webp" alt="Debashrita Ray"
-              class="w-11 h-11 rounded-full object-cover flex-shrink-0 border-2 border-secondary/20">
-            <div>
-              <div class="text-white font-bold text-sm">Debashrita Ray</div>
-              <div class="text-white/70 text-xs">BA</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 3 -->
-        <div
-          class="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-md hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 flex flex-col max-w-[360px] mx-auto lg:max-w-none w-full">
-          <div class="mb-4">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-              class="text-secondary">
-              <path d="M10 11L8.5 16H5L6.5 11H5V7H10V11ZM19 11L17.5 16H14L15.5 11H14V7H19V11Z" fill="currentColor">
-              </path>
-            </svg>
-          </div>
-          <div class="flex gap-1 mb-4">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-secondary">
-              <path
-                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
-              </path>
-            </svg>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-secondary">
-              <path
-                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
-              </path>
-            </svg>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-secondary">
-              <path
-                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
-              </path>
-            </svg>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-secondary">
-              <path
-                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
-              </path>
-            </svg>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-secondary">
-              <path
-                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
-              </path>
-            </svg>
-          </div>
-          <p class="text-white/90 text-sm italic leading-relaxed mb-6 flex-1">"I got promoted within 6 months of
-            completing my MBA. Jain Online truly delivers on its promise."</p>
-          <div class="flex items-center gap-3 mt-auto">
-            <img src="./assets/testimonials/hiba.webp" alt="Heba Kouser"
-              class="w-11 h-11 rounded-full object-cover flex-shrink-0 border-2 border-secondary/20">
-            <div>
-              <div class="text-white font-bold text-sm">Heba Kouser</div>
-              <div class="text-white/70 text-xs">MBA – HR & Finance</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 4 -->
-        <div
-          class="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-md hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 flex flex-col max-w-[360px] mx-auto lg:max-w-none w-full">
-          <div class="mb-4">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-              class="text-secondary">
-              <path d="M10 11L8.5 16H5L6.5 11H5V7H10V11ZM19 11L17.5 16H14L15.5 11H14V7H19V11Z" fill="currentColor">
-              </path>
-            </svg>
-          </div>
-          <div class="flex gap-1 mb-4">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-secondary">
-              <path
-                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
-              </path>
-            </svg>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-secondary">
-              <path
-                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
-              </path>
-            </svg>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-secondary">
-              <path
-                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
-              </path>
-            </svg>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-secondary">
-              <path
-                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
-              </path>
-            </svg>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-secondary">
-              <path
-                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
-              </path>
-            </svg>
-          </div>
-          <p class="text-white/90 text-sm italic leading-relaxed mb-6 flex-1">"World-class curriculum,
-            industry-relevant projects, and a degree that actually opened doors for me."</p>
-          <div class="flex items-center gap-3 mt-auto">
-            <img src="./assets/testimonials/kalpita.webp" alt="Kalpita S"
-              class="w-11 h-11 rounded-full object-cover flex-shrink-0 border-2 border-secondary/20">
-            <div>
-              <div class="text-white font-bold text-sm">Kalpita S</div>
-              <div class="text-white/70 text-xs">MBA – Finance & Networking</div>
-            </div>
-          </div>
-        </div>
+        <!-- Arrow controls (visible on hover) -->
+        <button type="button" data-alumni-arrow="prev" aria-label="Previous testimonials"
+          class="alumni-arrow absolute left-1 top-1/2 z-20 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white text-primary opacity-0 shadow-lg transition duration-200 hover:bg-secondary hover:text-primary focus-visible:opacity-100 active:scale-95 group-hover:opacity-100 md:left-4">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" class="h-5 w-5">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+        <button type="button" data-alumni-arrow="next" aria-label="Next testimonials"
+          class="alumni-arrow absolute right-1 top-1/2 z-20 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white text-primary opacity-0 shadow-lg transition duration-200 hover:bg-secondary hover:text-primary focus-visible:opacity-100 active:scale-95 group-hover:opacity-100 md:right-4">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" class="h-5 w-5">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
       </div>
     </div>
   </section>
 
+  <script>
+    (function () {
+      var ALUMNI = [
+        {
+          id: 1,
+          name: "Aniruddh Chawat",
+          role: "MBA HR and Finance",
+          videoUrl: "https://api.onlinejain.com/media/9_16_Final/Aniruddh_9_16.mp4",
+          hero: "./assets/testimonials/aniruddh-hero.webp",
+          thumb: "./assets/testimonials/aniruddh-thumb.webp"
+        },
+        {
+          id: 2,
+          name: "Debasmita Roy",
+          role: "BBA HR",
+          videoUrl: "https://api.onlinejain.com/media/9_16_Final/Debasmita_9_16.mp4",
+          hero: "./assets/testimonials/debasmita-hero.webp",
+          thumb: "./assets/testimonials/debasmita-thumb.webp"
+        },
+        {
+          id: 3,
+          name: "Heba Kousar",
+          role: "MBA HR and Finance",
+          videoUrl: "https://api.onlinejain.com/media/9_16_Final/Heba_9_16.mp4",
+          hero: "./assets/testimonials/heba-hero.webp",
+          thumb: "./assets/testimonials/heba-thumb.webp"
+        },
+        {
+          id: 4,
+          name: "Kalpitha S",
+          role: "MBA Finance and Marketing",
+          videoUrl: "https://api.onlinejain.com/media/9_16_Final/Kalpita_9_16.mp4",
+          hero: "./assets/testimonials/kalpitha-hero.webp",
+          thumb: "./assets/testimonials/kalpitha-thumb.webp"
+        },
+        {
+          id: 5,
+          name: "Yashwanth S",
+          role: "B.Com Accounting and Finance",
+          videoUrl: "https://api.onlinejain.com/media/9_16_Final/Yash_9_16.mp4",
+          hero: "./assets/testimonials/yashwanth-hero.webp",
+          thumb: "./assets/testimonials/yashwanth-thumb.webp"
+        }
+      ];
 
+      var track = document.getElementById("alumniCardsTrack");
+      if (!track) return;
+
+      ALUMNI.forEach(function (a) {
+        var article = document.createElement("article");
+        article.className =
+          "alumni-card relative h-[280px] w-[170px] shrink-0 overflow-hidden rounded-md ring-1 ring-white/15 md:h-[460px] md:w-[270px] md:rounded-xl xl:h-[510px] xl:w-[295px]";
+        article.dataset.video = a.videoUrl;
+
+        article.innerHTML =
+          '<img src="' + a.hero + '" alt="' + a.name + '" class="pointer-events-none absolute inset-0 h-full w-full select-none object-cover" draggable="false">' +
+          '<button type="button" class="alumni-play-btn absolute inset-0 z-10 flex w-full cursor-pointer items-center justify-center border-0 bg-transparent p-0" aria-label="Play ' + a.name + ' testimonial">' +
+            '<span class="flex h-10 w-10 items-center justify-center rounded-full bg-white/90 shadow-lg transition group-hover:scale-105">' +
+              '<svg viewBox="0 0 24 24" fill="currentColor" class="ml-0.5 h-4 w-4 text-primary"><path d="M8 5v14l11-7z" /></svg>' +
+            '</span>' +
+          '</button>' +
+          '<div aria-hidden="true" class="alumni-overlay pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/85 via-black/55 to-transparent"></div>' +
+          '<div class="alumni-meta pointer-events-none absolute inset-x-0 bottom-0 flex flex-col items-center px-2 pb-3 pt-3 text-center md:px-4 md:pb-6 md:pt-8">' +
+            '<div class="mb-1.5 rounded-full bg-secondary p-0.5 md:mb-3">' +
+              '<div class="relative h-10 w-10 overflow-hidden rounded-full bg-neutral-800 md:h-14 md:w-14">' +
+                '<img src="' + a.thumb + '" alt="" class="h-full w-full object-cover">' +
+              '</div>' +
+            '</div>' +
+            '<p class="font-sans text-[11px] font-bold leading-tight text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)] md:text-base">' + a.name + '</p>' +
+            '<p class="mt-0.5 font-sans text-[10px] leading-tight text-white/90 drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)] md:mt-1 md:text-sm">' + a.role + '</p>' +
+          '</div>';
+
+        track.appendChild(article);
+      });
+
+      // Arrow controls -> scroll one card width per click
+      var slider = document.getElementById("alumniSlider");
+      if (slider) {
+        document.querySelectorAll("[data-alumni-arrow]").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var firstCard = slider.querySelector(".alumni-card");
+            var step = firstCard ? firstCard.getBoundingClientRect().width + 24 : 250;
+            var dir = btn.getAttribute("data-alumni-arrow") === "next" ? 1 : -1;
+            slider.scrollBy({ left: dir * step, behavior: "smooth" });
+          });
+        });
+      }
+
+      // Click play button -> swap to inline video
+      track.addEventListener("click", function (e) {
+        var btn = e.target.closest(".alumni-play-btn");
+        if (!btn) return;
+        var card = btn.closest(".alumni-card");
+        if (!card) return;
+
+        var videoUrl = card.dataset.video;
+        var video = document.createElement("video");
+        video.src = videoUrl;
+        video.controls = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        video.preload = "metadata";
+        video.className = "absolute inset-0 z-20 h-full w-full bg-black object-cover";
+
+        // Hide static layers
+        card.querySelectorAll(".alumni-play-btn, .alumni-overlay, .alumni-meta").forEach(function (el) {
+          el.style.display = "none";
+        });
+
+        card.appendChild(video);
+      });
+    })();
+  </script>
 
   <!-- ================= ADMISSION PROCESS SECTION ================= -->
   <div id="admission-process" class="w-full md:flex md:justify-center bg-white">
@@ -1344,7 +1490,7 @@
                   <ul class="space-y-3">
                     <li class="flex items-start gap-3">
                       <div
-                        class="mt-1 w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center shrink-0">
+                        class="mt-1 w-5 h-5 rounded-full bg-blue-100 text-primary flex items-center justify-center shrink-0">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                           stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                           <polyline points="20 6 9 17 4 12"></polyline>
@@ -1411,7 +1557,7 @@
                       and access to the learning portal within 48 hours.
                     </p>
                     <a href="#applyNow"
-                      class="bg-white text-primary font-bold rounded-full px-6 py-3 text-sm md:text-base whitespace-nowrap inline-flex items-center gap-2 hover:bg-gray-50 transition-colors shadow-sm">
+                      class="bg-white text-primary font-bold rounded-full px-6 py-3 text-sm whitespace-nowrap inline-flex items-center gap-2 hover:bg-gray-50 transition-colors shadow-sm">
                       Apply Now
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1733,7 +1879,7 @@
 
         <div class="flex justify-center mt-12">
           <button id="toggle-faqs"
-            class="inline-flex items-center gap-2 bg-transparent text-primary border-2 border-primary hover:bg-primary hover:text-white rounded-full px-8 py-4 font-sans text-base font-semibold transition-all active:scale-[0.98]">
+            class="inline-flex items-center gap-2 bg-transparent text-primary border-2 border-primary hover:bg-primary hover:text-white rounded-full px-8 py-3 font-sans text-base font-semibold transition-all active:scale-[0.98]">
             <span id="toggle-text">View All FAQs</span>
             <svg id="toggle-icon" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor"
               viewBox="0 0 24 24">
@@ -1757,11 +1903,11 @@
         </p>
         <ul class="space-y-2">
           <li class="flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-secondary shrink-0"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-white shrink-0"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
             <a href="mailto:support@degree-explorer.com" class="hover:text-secondary transition-colors break-all">support@degree-explorer.com</a>
           </li>
           <li class="flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-secondary shrink-0"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-white shrink-0"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <span>Bangalore, India</span>
           </li>
         </ul>
@@ -1804,7 +1950,7 @@
 
     <!-- Modal Content -->
     <div class="relative h-full flex items-center justify-center p-4 overflow-y-auto">
-      <div class="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl my-8">
+      <div class="relative w-full max-w-xl bg-white rounded-2xl shadow-2xl my-8">
         <!-- Close Button -->
         <button id="closeApplicationModal" type="button"
           class="absolute top-5 right-5 w-9 h-9 rounded-full flex items-center justify-center text-gray-400 hover:text-gray-900 hover:bg-gray-100 transition-all z-20 cursor-pointer"
@@ -1860,7 +2006,7 @@
               </div>
 
               <button type="submit"
-                class="w-full bg-primary text-white hover:bg-primary/90 py-3 font-bold text-sm lg:text-base rounded-lg transition-all flex items-center justify-center gap-2 group cursor-pointer">
+                class="w-full bg-primary text-white hover:bg-primary/90 py-3 font-bold text-sm rounded-lg transition-all flex items-center justify-center gap-2 group cursor-pointer">
                 Next
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -1895,10 +2041,7 @@
                     <option value="mba">MBA - Master of Business Administration</option>
                     <option value="mca">MCA - Master of Computer Applications</option>
                     <option value="mcom">M.COM - Master of Commerce</option>
-                    <option value="ma">MA - Master of Arts</option>
-                    <option value="bba">BBA - Bachelor of Business Administration</option>
-                    <option value="bca">BCA - Bachelor of Computer Applications</option>
-                    <option value="bcom">B.COM - Bachelor of Commerce</option>
+
                   </select>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -1958,7 +2101,7 @@
               </div>
 
               <button type="submit"
-                class="w-full bg-primary text-white hover:bg-primary/90 py-3 font-bold text-sm lg:text-base rounded-lg transition-all flex items-center justify-center gap-2 group cursor-pointer">
+                class="w-full bg-primary text-white hover:bg-primary/90 py-3 font-bold text-sm rounded-lg transition-all flex items-center justify-center gap-2 group cursor-pointer">
                 Submit Final Application
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -1991,6 +2134,7 @@
     </div>
   </div>
 
+  <script src="./assets/js/lead.js"></script>
   <script>
     // FAQ Toggle Logic
     const toggleBtn = document.getElementById('toggle-faqs');
@@ -2084,11 +2228,13 @@
 
       step1Form.addEventListener('submit', (e) => {
         e.preventDefault();
+        window.LeadCapture.captureStep(1, step1Form);
         showStep(step2);
       });
 
       step2Form.addEventListener('submit', (e) => {
         e.preventDefault();
+        window.LeadCapture.captureStep(2, step2Form);
         showStep(success);
       });
     })();
