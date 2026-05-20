@@ -756,13 +756,13 @@
           class="group relative p-10 md:p-12 rounded-2xl bg-white border border-white/10 hover:shadow-2xl transition-all duration-500 reveal-element">
           <div class="absolute top-0 right-0 p-8">
             <span
-              class="text-7xl md:text-9xl font-bold font-heading text-primary/5 italic leading-none group-hover:text-primary/10 transition-colors">01</span>
+              class="text-5xl sm:text-6xl md:text-7xl font-bold font-heading text-primary/10 italic leading-none group-hover:text-primary/20 transition-colors">01</span>
           </div>
 
           <div class="relative z-10">
             <div
-              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-widest mb-8">
-              <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+              class="inline-flex items-center gap-2 py-1  text-primary text-[10px] font-bold uppercase tracking-widest mb-2">
+              <span class="w-1.5 h-1.5 bg-primary"></span>
               Pathway 01
             </div>
 
@@ -805,13 +805,13 @@
           style="transition-delay: 200ms;">
           <div class="absolute top-0 right-0 p-8">
             <span
-              class="text-7xl md:text-9xl font-bold font-heading text-primary/5 italic leading-none group-hover:text-primary/10 transition-colors">02</span>
+              class="text-5xl sm:text-6xl md:text-7xl font-bold font-heading text-primary/10 italic leading-none group-hover:text-primary/20 transition-colors">02</span>
           </div>
 
           <div class="relative z-10">
             <div
-              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-widest mb-8">
-              <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+              class="inline-flex items-center gap-2 py-1 text-primary text-[10px] font-bold uppercase tracking-widest mb-2">
+              <span class="w-1.5 h-1.5 bg-primary"></span>
               Pathway 02
             </div>
 
@@ -1911,7 +1911,7 @@
       </div>
 
       <!-- Quick Menu -->
-      <div class="lg:col-span-5">
+      <div class="lg:col-span-3">
         <h4 class="text-white font-semibold md:mt-6 mb-4 text-sm uppercase tracking-wide">Quick Menu</h4>
         <ul class="grid grid-cols-1 gap-x-6 gap-y-2 text-sm">
           <li><a href="#programs" class="hover:text-secondary transition-colors">Programs</a></li>
@@ -1920,6 +1920,15 @@
           <li><a href="#faculty" class="hover:text-secondary transition-colors">Faculty</a></li>
           <li><a href="#admission-process" class="hover:text-secondary transition-colors">Admission Process</a></li>
           <li><a href="#faq" class="hover:text-secondary transition-colors">FAQ's</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div class="lg:col-span-2">
+        <h4 class="text-white font-semibold md:mt-6 mb-4 text-sm uppercase tracking-wide">Company</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#about" class="hover:text-secondary transition-colors">About Us</a></li>
+          <li><a href="#contact" class="hover:text-secondary transition-colors">Contact Us</a></li>
         </ul>
       </div>
 
@@ -1947,7 +1956,48 @@
 
     <!-- Modal Content -->
     <div class="relative h-full flex items-center justify-center p-4 overflow-y-auto">
-      <div class="relative w-full max-w-xl bg-white rounded-2xl shadow-2xl my-8">
+      <div class="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl my-8 overflow-hidden grid md:grid-cols-2">
+        <!-- Left: Visual / Brand Panel -->
+        <div class="hidden md:flex relative bg-primary text-white p-10 lg:p-12 flex-col justify-between overflow-hidden">
+          <img src="./assets/hero/hero-banner.png" alt=""
+            class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none" />
+          <div class="absolute -top-24 -right-24 w-64 h-64 bg-secondary/20 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-400/20 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="relative z-10">
+            <p class="tracking-[0.2em] text-[11px] font-bold uppercase text-white/70 mb-4">JAIN Online</p>
+            <h2 class="text-2xl lg:text-3xl font-bold font-heading leading-[1.2]">
+              Take the first step toward your future career.
+            </h2>
+            <p class="text-white/70 text-sm mt-4 leading-relaxed">
+              Speak to a counsellor and find the right program for you.
+            </p>
+          </div>
+
+          <ul class="relative z-10 space-y-4 mt-10">
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-secondary" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              </span>
+              <span class="text-sm text-white/90">UGC-entitled online degree</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-secondary" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              </span>
+              <span class="text-sm text-white/90">Industry-aligned Micro-Credentials</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-secondary" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              </span>
+              <span class="text-sm text-white/90">Flexible learning, dedicated mentor support</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: Form Steps -->
+        <div class="relative">
         <!-- Close Button -->
         <button id="closeApplicationModal" type="button"
           class="absolute top-5 right-5 w-9 h-9 rounded-full flex items-center justify-center text-gray-400 hover:text-gray-900 hover:bg-gray-100 transition-all z-20 cursor-pointer"
@@ -1960,7 +2010,7 @@
         </button>
 
         <!-- Step 1: Basic Information -->
-        <div id="modalStep1" class="p-8 lg:p-12">
+        <div id="modalStep1" class="p-8 lg:p-10">
           <div class="space-y-8">
             <div class="space-y-2">
               <div class="flex items-center gap-3">
@@ -2017,7 +2067,7 @@
         </div>
 
         <!-- Step 2: Additional Details -->
-        <div id="modalStep2" class="p-8 lg:p-12 hidden">
+        <div id="modalStep2" class="p-8 lg:p-10 hidden">
           <div class="space-y-8">
             <div class="space-y-2">
               <div class="flex items-center gap-3">
@@ -2112,7 +2162,7 @@
         </div>
 
         <!-- Success State -->
-        <div id="modalSuccess" class="p-8 lg:p-12 hidden text-center">
+        <div id="modalSuccess" class="p-8 lg:p-10 hidden text-center">
           <div class="mx-auto w-16 h-16 rounded-full bg-green-100 text-green-600 flex items-center justify-center mb-6">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8">
@@ -2127,11 +2177,13 @@
             Done
           </button>
         </div>
+        </div>
       </div>
     </div>
   </div>
 
   <script src="./assets/js/lead.js"></script>
+  <script src="./assets/js/legal.js"></script>
   <script>
     // FAQ Toggle Logic
     const toggleBtn = document.getElementById('toggle-faqs');
