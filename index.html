@@ -2287,10 +2287,21 @@
         showStep(step2);
       });
 
-      step2Form.addEventListener('submit', (e) => {
+      step2Form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        window.LeadCapture.captureStep(2, step2Form);
-        window.location.href = 'thank-you.html';
+        const submitBtn = step2Form.querySelector('button[type="submit"]');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<svg class="animate-spin w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path></svg> Submitting...';
+        }
+        // Race the lead submission against an 8s timeout so a hung request
+        // never traps the user on the form.
+        const timeout = new Promise((resolve) => setTimeout(resolve, 8000));
+        try {
+          await Promise.race([window.LeadCapture.captureStep(2, step2Form), timeout]);
+        } finally {
+          window.location.href = 'thank-you.html';
+        }
       });
     })();
   </script>
